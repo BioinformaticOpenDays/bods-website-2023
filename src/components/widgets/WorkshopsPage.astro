@@ -1,0 +1,117 @@
+---
+import { Icon } from 'astro-icon';
+import { Picture } from '@astrojs/image/components';
+---
+
+<section class="dark:bg-neutral-900">
+	<div class="absolute inset-0 bg-white dark:bg-neutral-900 pointer-events-none mb-32" aria-hidden="true"></div>
+	<div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12 mb-8 dark:bg-neutral-900">
+		<h2
+			class="text-4xl dark:text-primary-400 md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-center"
+		>
+			Workshops
+		</h2>
+		<p class="max-w-3xl mx-auto text-center text-xl text-gray-600 dark:text-gray-400">
+			You can choose the workshop you want to attend.
+		</p>
+		<div
+			class="px-4 py-8 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl grid gap-6 row-gap-10 md:grid-cols-2 dark:bg-neutral-900"
+			id="workshop1"
+		>
+			<div class="md:pb-6 md:pr-16 dark:bg-neutral-900">
+				<a href="https://www.instagram.com/p/CoUjad2Ijo2/">
+					<p class="text-sm text-gray-600 dark:text-gray-400 pb-2">Workshop 1</p>
+					<h2 class="mb-8 text-xl lg:text-2xl font-bold text-primary-600 font-heading dark:text-white">
+						Introduction to Chemoinformatics using DeepMol
+					</h2>
+				</a>
+				<p class="max-w-3xl mx-auto text-base text-gray-600 dark:text-gray-400">
+					This workshop will cover key topics in Chemoinformatics such as chemical compound representations,
+					standardization, and feature generation. Participants will also learn techniques for handling imbalanced data,
+					training and evaluating ML/DL models, and understanding model explainability through the use of DeepMol, a
+					Python-based ML and DL framework for drug discovery. Join us for a hands-on exploration of how
+					chemoinformatics can be used to tackle real-world drug discovery problems!
+				</p>
+			</div>
+			<div class="relative pt-5 dark:bg-neutral-900">
+				<a href="https://www.instagram.com/p/CoUjad2Ijo2/" target="_blank" rel="noopener">
+					<Picture
+						class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:relative md:h-full"
+						src={import('public/workshops/confirmed_workshop_minho.png')}
+						widths={[400, 400]}
+						sizes="(max-width: 400px) 100vw, 400px"
+						alt="University of Minho Location"
+						aspectRatio="1:1"
+					/>
+				</a>
+				<p class="text-sm text-gray-600 dark:text-gray-400 py-3">
+					<a
+						class="text-secondary-600 hover:underline dark:secondary-600"
+						href="https://www.linkedin.com/in/joaocapels/"
+						target="_blank"
+					>
+						João Capela</a
+					> & <a
+						class="text-secondary-600 hover:underline dark:secondary-600"
+						href="https://www.linkedin.com/in/joaocorreia95/"
+						target="_blank"
+					>
+						João Correia</a
+					> [U. Minho]
+				</p>
+			</div>
+		</div>
+		<div class="bg-primary-600 py-0.5"></div>
+
+		<div
+			class="px-4 py-8 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl grid gap-6 row-gap-10 md:grid-cols-2 dark:bg-neutral-900"
+			id="workshop2"
+		>
+			<div class="md:pb-6 md:pr-16 dark:bg-neutral-900">
+				<a href="https://www.instagram.com/p/CoFUjfBoBeS/">
+					<p class="text-sm text-gray-600 dark:text-gray-400 pb-2">Workshop 2</p>
+					<h2 class="mb-8 text-xl lg:text-2xl font-bold text-primary-600 font-heading dark:text-white">
+						The Importance of Machine Learning in Structural Biology
+					</h2>
+				</a>
+				<p class="max-w-3xl mx-auto text-base text-gray-600 dark:text-gray-400">
+					Did you know that Machine Learning is being used in Structural Biology? In this workshop you will be guided
+					through a simple Machine Learning pipeline to predict protein residues that interact with a ligand.
+				</p>
+			</div>
+			<div class="relative dark:bg-neutral-900">
+				<a href="https://www.instagram.com/p/CoFUjfBoBeS/" target="_blank" rel="noopener">
+					<Picture
+						class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:relative md:h-full"
+						src={import('public/workshops/confirmed_workshop_coimbra.png')}
+						widths={[400, 400]}
+						sizes="(max-width: 400px) 100vw, 400px"
+						alt="University of Minho Location"
+						aspectRatio="1:1"
+					/>
+				</a>
+				<p class="text-sm text-gray-600 dark:text-gray-400 py-3">
+					<a
+						class="text-secondary-600 hover:underline dark:secondary-600"
+						href="https://www.linkedin.com/in/irina-moreira-a25a4a1/"
+						target="_blank"
+					>
+						Irina Moreira</a
+					>, <a
+						class="text-secondary-600 hover:underline dark:secondary-600"
+						href="https://www.linkedin.com/in/ana-catarina-marques-pereira-628797199/"
+						target="_blank"
+					>
+						Catarina Pereira</a
+					> & <a
+						class="text-secondary-600 hover:underline dark:secondary-600"
+						href="https://www.linkedin.com/in/luana-ferreira-afonso/"
+						target="_blank"
+					>
+						Luana Afonso</a
+					> [U. Coimbra]
+				</p>
+			</div>
+		</div>
+	</div>
+</section>

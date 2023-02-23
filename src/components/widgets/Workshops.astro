@@ -1,0 +1,56 @@
+---
+import { Icon } from 'astro-icon';
+
+const items = [
+	{
+		workshop: 'Workshop 1',
+		title: 'Introduction to Chemoinformatics using DeepMol',
+		description: 'João Capela & João Correia',
+		location: 'U. Minho',
+		link: '/workshops#workshop1',
+	},
+	{
+		workshop: 'Workshop 2',
+		title: 'The Importance of Machine Learning in Structural Biology',
+		description: 'Irina Moreira, Luana Afonso & Catarina Marques-Pereira',
+		location: 'U. Coimbra',
+		link: '/workshops#workshop2',
+	},
+];
+---
+
+<section class="relative dark:bg-neutral-900" id="workshops">
+	<div class="absolute inset-0 bg-primary-100 dark:bg-neutral-800 pointer-events-none mb-32" aria-hidden="true"></div>
+	<div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+		<div class="py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12">
+			<div class="mb-8 text-center">
+				<h2
+					class="text-2xl dark:text-primary-400 md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+				>
+					Workshops
+				</h2>
+				<p class="max-w-2xl mx-auto text-center text-lg text-neutral-600 dark:text-neutral-400">
+					You can choose the workshop you want to attend.
+				</p>
+				<p class="max-w-2xl mx-auto text-center text-base text-neutral-600 dark:text-neutral-400">
+					Included in the BOD registration.
+				</p>
+			</div>
+			<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start my-12 dark:text-white dark:bg-neutral-800">
+				{
+					items.map(({ workshop, title, description, link }) => (
+						<a class="dark:text-neutral-200" href={link}>
+							<div class="relative flex flex-col p-6 bg-white dark:bg-neutral-900 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-neutral-800">
+								<div class="flex items-center mb-4">
+									<div class="ml-4 text-xl font-bold">{workshop}</div>
+								</div>
+								<div class="ml-4 font-bold mb-3 text-primary-600 ">{title}</div>
+								<p class="mx-3 text-sm text-neutral-500 dark:text-neutral-400 text-md">{description}</p>
+							</div>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>

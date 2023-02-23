@@ -1,0 +1,71 @@
+---
+import { Icon } from 'astro-icon';
+import { Picture } from '@astrojs/image/components';
+---
+
+<section class="dark:bg-neutral-900">
+	<div class="absolute inset-0 bg-white dark:bg-neutral-900 pointer-events-none mb-32" aria-hidden="true"></div>
+	<div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12 mb-8">
+		<h2
+			class="text-4xl dark:text-primary-400 md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading text-center"
+		>
+			Keynote Speakers
+		</h2>
+		<p class="max-w-3xl mx-auto text-center text-xl text-gray-600 dark:text-gray-400">
+			Here you can see the first confirmed speakers
+		</p>
+		<div
+			class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl grid gap-6 row-gap-10 md:grid-cols-2"
+			id="loiclannelongue"
+		>
+			<div class="md:pb-6 md:pr-16">
+				<a href="https://www.linkedin.com/in/lo%C3%AFc-lannelongue-b11046107/">
+					<h2 class="mb-8 text-xl lg:text-2xl font-bold text-primary-600 font-heading dark:text-white">
+						Loïc Lannelongue
+					</h2>
+				</a>
+				<p class="max-w-3xl mx-auto text-base text-gray-600 dark:text-gray-400">
+					Dr Loïc Lannelongue is a Research Associate in Biomedical Data Science in the Cardiovascular Epidemiology Unit
+					and the Inouye lab at the University of Cambridge. He is also a College Post-Doctoral Associate at Jesus
+					College, Cambridge, and an Associate Fellow of Advance HE. <br /><br />
+					Loïc developed the Greener Algorithms project, in collaboration with Jason Grealey and Michael Inouye, to understand
+					the carbon footprint of analyses and promote best practices in green computing.
+				</p>
+			</div>
+			<div class="relative">
+				<a href="https://www.linkedin.com/in/lo%C3%AFc-lannelongue-b11046107/" target="_blank" rel="noopener">
+					<Picture
+						class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:relative md:h-full"
+						src={import('public/speakers/Loic-Lannelongue.png')}
+						widths={[350, 350]}
+						sizes="(max-width: 350px) 100vw, 350px"
+						alt="University of Minho Location"
+						aspectRatio="1:1"
+					/>
+				</a>
+				<div class="py-6 md:py-8">
+					<ul class="flex">
+						<li>
+							<a
+								class="text-primary-600 dark:text-primary-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none focus:ring-4 focus:ring-neutral-200 dark:focus:ring-neutral-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+								aria-label="website"
+								href="https://www.lannelongue.eu"
+							>
+								<Icon name="tabler:link" class="w-5 h-5" />
+							</a>
+						</li>
+						<li>
+							<a
+								class="text-primary-600 dark:text-primary-600 hover:bg-neutral-100 dark:hover:bg-neutral-700 focus:outline-none focus:ring-4 focus:ring-neutral-200 dark:focus:ring-neutral-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+								aria-label="Linkedin"
+								href="https://www.linkedin.com/in/lo%C3%AFc-lannelongue-b11046107/"
+							>
+								<Icon name="tabler:brand-linkedin" class="w-5 h-5" />
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
