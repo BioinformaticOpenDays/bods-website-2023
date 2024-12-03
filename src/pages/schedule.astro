@@ -3,18 +3,17 @@ import { SITE } from '~/config.mjs';
 import { getCanonical, getHomePermalink } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
 
-
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import FirstSchedule from '~/components/widgets/First_Schedule.astro';
+import FirstSchedule from '~/components/widgets/ScheduleMini.astro';
 
 const meta = {
-	title: SITE.title,
-	description: SITE.description,
-	canonical: getCanonical(getHomePermalink()),
+  title: SITE.title,
+  description: SITE.description,
+  canonical: getCanonical(getHomePermalink()),
 };
 ---
 
 <Layout {meta}>
-	<FirstSchedule/>
-	<CallToAction />
+  <FirstSchedule />
+  <CallToAction />
 </Layout>
