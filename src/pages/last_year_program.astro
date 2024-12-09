@@ -3,7 +3,7 @@ import { SITE } from '~/config.mjs';
 import { getCanonical, getHomePermalink } from '~/utils/permalinks';
 import Layout from '~/layouts/PageLayout.astro';
 
-import Conference from '~/components/widgets/Schedule.astro';
+import Conference from '~/components/widgets/schedule.astro';
 
 const meta = {
   title: SITE.title,
@@ -13,5 +13,5 @@ const meta = {
 ---
 
 <Layout {meta}>
-  <Schedule />
+  <schedule></schedule>
 </Layout> -->
