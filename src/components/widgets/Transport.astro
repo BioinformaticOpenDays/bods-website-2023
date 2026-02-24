@@ -6,7 +6,7 @@ const items = [
 		title: 'Train',
 		icon: 'emojione-v1:bullet-train',
 		description: 'Learn more about CP train tickets and schedules.',
-		link: 'https://www.cp.pt/passageiros/en/train-times/Stations/braga-station',
+		link: 'https://www.cp.pt/en/',
 	},
 	{
 		title: 'Bus',
@@ -18,19 +18,19 @@ const items = [
 		title: 'Airplane',
 		icon: 'emojione-v1:airplane',
 		description: 'Find flights to Porto (OPO), the closest airport.',
-		link: 'https://www.aeroportoporto.pt/en/opo/home',
+		link: 'https://www.portoairport.pt/en/opo/home',
 	},
 	{
 		title: 'Car',
 		icon: 'emojione-v1:automobile',
 		description: 'Beat the traffic and get here with Waze navigation.',
-		link: 'https://www.waze.com/live-map/directions/pt/braga/braga/university-of-minho-campus-of-gualtar?navigate=yes&utm_campaign=waze_website&utm_source=waze_website&utm_medium=lm_share_location&to=place.ChIJZTG3nSf8JA0R8GO30bCQMnU',
+		link: 'https://www.waze.com/pt-PT/live-map/directions/pt/braga/braga/universidade-do-minho-campus-de-gualtar?to=place.ChIJZTG3nSf8JA0R8GO30bCQMnU',
 	},
 ];
 ---
 
-<section class="relative dark:bg-gray-800 bg-primary-100" id="transport">
-	<div class="absolute inset-0 bg-white dark:bg-gray-900 pointer-events-none mb-32" aria-hidden="true"></div>
+<section class="relative dark:bg-neutral-900 bg-primary-100" id="transport">
+	<div class="absolute inset-0 bg-white dark:bg-neutral-900 pointer-events-none mb-32" aria-hidden="true"></div>
 	<div class="relative max-w-6xl mx-auto px-4 sm:px-6">
 		<div class="py-4 pt-8 sm:py-6 lg:py-8 lg:pt-12">
 			<div class="mb-8 text-center">
@@ -47,7 +47,7 @@ const items = [
 				{
 					items.map(({ title, icon, description, link }) => (
 						<a class="dark:text-gray-200" href={link} target="_blank">
-							<div class="relative flex flex-col p-6 bg-white dark:bg-gray-800 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-gray-800">
+							<div class="relative flex flex-col p-6 bg-white dark:bg-neutral-800 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-neutral-800">
 								<div class="flex items-center">
 									<Icon name={icon} class="w-12 h-12" />
 									<div class="ml-4 text-2xl font-bold">{title}</div>
