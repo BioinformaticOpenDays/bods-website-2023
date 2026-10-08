@@ -1,44 +1,48 @@
 ---
-import { Icon } from 'astro-icon';
 import Logo from '~/components/atoms/Logo.astro';
 import Logo_dark from '~/components/atoms/Logo_dark.astro';
 import ToggleTheme from '~/components/core/ToggleTheme.astro';
 import ToggleMenu from '~/components/core/ToggleMenu.astro';
 
-import { getPermalink, getBlogPermalink, getHomePermalink } from '~/utils/permalinks';
+import { getHomePermalink } from '~/utils/permalinks';
 ---
 
 <header
-  class="sticky top-0 z-40 flex-none mx-auto w-full bg-white md:bg-white/90 dark:bg-neutral-900 dark:md:bg-neutral-900 md:backdrop-blur-sm border-b dark:border-b-0"
+  class="sticky top-0 z-40 flex-none w-full bg-white md:bg-white/90 dark:bg-neutral-900 dark:md:bg-neutral-900 md:backdrop-blur-sm border-b dark:border-b-0 overflow-y-auto md:overflow-visible"
   id="header"
 >
-  <div class="py-3 px-3 mx-auto w-full md:flex md:justify-between max-w-6xl md:px-4">
+  <div class="py-3 px-3 md:flex justify-between">
     <div class="flex justify-between">
       <a href={getHomePermalink()} class="relative flex items-center">
-        <!-- This part defines the fixed logo area -->
-        <div class="relative w-[450px] h-[120px] flex items-center justify-center overflow-hidden">
+        <!-- Fixed logo area: smaller on phones so it doesn't overflow next to the icons -->
+        <div
+          class="relative w-[200px] h-[60px] sm:w-[280px] sm:h-[80px] md:w-[400px] md:h-[100px] flex items-center justify-center overflow-hidden"
+        >
           <div class="absolute inset-0 flex items-center justify-center dark:hidden">
             <Logo />
           </div>
-          <div class="absolute inset-0 flex items-center justify-center hidden dark:flex">
+          <div class="absolute inset-0 items-center justify-center hidden dark:flex">
             <Logo_dark />
           </div>
         </div>
       </a>
-      
-      
+
+      <!-- Mobile only (< md): theme toggle + hamburger -->
       <div class="flex items-center md:hidden">
         <ToggleTheme />
         <ToggleMenu />
       </div>
     </div>
+
+    <!-- Hidden by default; BasicScripts toggles `hidden` on mobile. From md up, md:flex always shows it. -->
     <nav
-      class="items-center w-full md:w-auto hidden md:flex text-neutral-600 dark:text-neutral-200 h-screen md:h-auto"
+      class="items-center w-full hidden md:flex text-neutral-600 dark:text-neutral-200"
       aria-label="Main navigation"
     >
-      <ul class="flex flex-col pt-8 md:pt-0 md:flex-row md:self-center w-full md:w-auto text-xl md:text-base">
-
-
+      <!-- No h-screen here: on mobile the header itself becomes h-screen when the menu is open -->
+      <ul
+        class="flex flex-col pt-8 pb-8 md:py-0 md:flex-row md:self-center text-center md:text-base items-center w-full md:w-auto"
+      >
         <li>
           <a
             class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
@@ -62,17 +66,19 @@ import { getPermalink, getBlogPermalink, getHomePermalink } from '~/utils/permal
 
         <li>
           <a
-          class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-          href="/speakers">Speakers</a
+            class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+            href="/speakers">Speakers</a
           >
         </li>
+
         <li>
           <a
             class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
             href="https://bioinformaticsopendays.com/#travelguide">Travel Guide</a
           >
         </li>
-        <!-- 
+
+        <!--
         <li>
           <a
             class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
@@ -81,6 +87,7 @@ import { getPermalink, getBlogPermalink, getHomePermalink } from '~/utils/permal
           </a>
         </li>
         -->
+
         <li>
           <a
             class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
@@ -88,41 +95,22 @@ import { getPermalink, getBlogPermalink, getHomePermalink } from '~/utils/permal
             >Registration
           </a>
         </li>
-      <!--
+
+        <!--
         <li>
           <a
             class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
             href="/sponsors">Sponsors</a
           >
         </li>
-      -->
+        -->
       </ul>
-      <!-- <li class="md:hidden">
-					<a
-						class="font-bold hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-						href="https://github.com/onwidget/astrowind"
-						>Github
-					</a>
-				</li> -->
     </nav>
 
-    <div class="md:self-center flex items-center mb-4 md:mb-0 ml-2">
+    <!-- Desktop only (>= md): theme toggle -->
+    <div class="md:self-center flex items-center ml-2">
       <div class="hidden items-center md:flex">
         <ToggleTheme iconClass="w-5 h-5" />
-        <!-- <a
-						class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-						aria-label="RSS Feed"
-						href="/rss.xml"
-					>
-						<Icon name="tabler:rss" class="w-5 h-5" />
-					</a>
-					<a
-						href="https://github.com/onwidget/astrowind"
-						class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
-						aria-label="Astrowind Github"
-					>
-						<Icon name="tabler:brand-github" class="w-5 h-5" />
-					</a> -->
       </div>
     </div>
   </div>

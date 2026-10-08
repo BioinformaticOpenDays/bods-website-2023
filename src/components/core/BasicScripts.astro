@@ -25,13 +25,47 @@
 		}
 	}
 
-	window.onload = function () {
-		attachEvent('[data-aw-toggle-menu]', 'click', function (elem) {
-			elem.classList.toggle('expanded');
-			document.body.classList.toggle('overflow-hidden');
-			document.getElementById('header')?.classList.toggle('h-screen');
-			document.querySelector('#header nav')?.classList.toggle('hidden');
+	// Single source of truth for the mobile menu state
+	function setMenuOpen(open) {
+		document.querySelectorAll('[data-aw-toggle-menu]').forEach((btn) => {
+			btn.classList.toggle('expanded', open);
+			btn.setAttribute('aria-expanded', String(open));
 		});
+		document.body.classList.toggle('overflow-hidden', open);
+		document.getElementById('header')?.classList.toggle('h-screen', open);
+		document.querySelector('#header nav')?.classList.toggle('hidden', !open);
+	}
+
+	function isMenuOpen() {
+		return document.querySelector('[data-aw-toggle-menu]')?.classList.contains('expanded') ?? false;
+	}
+
+	window.addEventListener('load', function () {
+		attachEvent('[data-aw-toggle-menu]', 'click', function () {
+			setMenuOpen(!isMenuOpen());
+		});
+
+		// Close the menu when a nav link is tapped (needed for same-page #anchor links,
+		// which don't trigger a page load)
+		document.querySelectorAll('#header nav a').forEach((link) => {
+			link.addEventListener('click', () => setMenuOpen(false));
+		});
+
+		// Close with the Escape key
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && isMenuOpen()) setMenuOpen(false);
+		});
+
+		// Reset the mobile menu state when growing to the desktop layout (md = 768px)
+		const desktopQuery = window.matchMedia('(min-width: 768px)');
+		const onBreakpointChange = (e) => {
+			if (e.matches) setMenuOpen(false);
+		};
+		if (desktopQuery.addEventListener) {
+			desktopQuery.addEventListener('change', onBreakpointChange);
+		} else {
+			desktopQuery.addListener(onBreakpointChange); // older Safari
+		}
 
 		attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
 			document.documentElement.classList.toggle('dark');
@@ -70,16 +104,12 @@
 			newlink.href = href;
 			newlink.click();
 		});
-	};
-	window.onpageshow = function () {
-		const elem = document.querySelector('[data-aw-toggle-menu]');
-		if (elem) {
-			elem.classList.remove('expanded');
-		}
-		document.body.classList.remove('overflow-hidden');
-		document.getElementById('header')?.classList.remove('h-screen');
-		document.querySelector('#header nav')?.classList.add('hidden');
-	};
+	});
+
+	// Runs on every page show, including back/forward cache restores
+	window.addEventListener('pageshow', function () {
+		setMenuOpen(false);
+	});
 </script>
 
 <!-- MailerLite Universal -->
