@@ -1,15 +1,15 @@
 ---
 import BearLink from 'src/components/widgets/BearLink.astro';
+import banner from '~/assets/images/banner_2027.png';
 ---
 
 <div class="banner">
   <img
     class="cover"
-    src="https://raw.githubusercontent.com/BioinformaticOpenDays/bods-website-2023/main/src/assets/images/banner_2026.png"
+    src={banner.src}
     alt="Bioinformatics Open Days"
   />
   <div class="banner-content text-center">
-    <!-- <img class="logo" src="https://raw.githubusercontent.com/BioinformaticOpenDays/bods-website-2023/main/src/assets/images/logowebsitehorizontalpreto24.png" alt="JSHeroes" /> -->
     <h1 class="dark:text-white text-4xl md:text-[3.50rem] tracking-tighter mb-4 font-bold leading-tighter font-heading">
       Bioinformatics Open Days
     </h1>

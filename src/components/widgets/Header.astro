@@ -36,7 +36,7 @@ import { getHomePermalink } from '~/utils/permalinks';
 
     <!-- Hidden by default; BasicScripts toggles `hidden` on mobile. From md up, md:flex always shows it. -->
     <nav
-      class="items-center w-full hidden md:flex text-neutral-600 dark:text-neutral-200"
+      class="items-center justify-end w-full hidden md:flex text-neutral-600 dark:text-neutral-200"
       aria-label="Main navigation"
     >
       <!-- No h-screen here: on mobile the header itself becomes h-screen when the menu is open -->
@@ -45,36 +45,36 @@ import { getHomePermalink } from '~/utils/permalinks';
       >
         <li>
           <a
-            class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+            class="header-link font-medium hover:text-neutral-900 dark:hover:text-white mx-3 px-1 mt-3 mb-2 pb-1 flex items-center transition duration-150 ease-in-out"
             href="/schedule">Schedule</a
           >
         </li>
 
         <li>
           <a
-            class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+            class="header-link font-medium hover:text-neutral-900 dark:hover:text-white mx-3 px-1 mt-3 mb-2 pb-1 flex items-center transition duration-150 ease-in-out"
             href="/workshops">Workshops</a
           >
         </li>
 
         <li>
           <a
-            class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+            class="header-link font-medium hover:text-neutral-900 dark:hover:text-white mx-3 px-1 mt-3 mb-2 pb-1 flex items-center transition duration-150 ease-in-out"
             href="/conferencebook">Conference Book</a
           >
         </li>
 
         <li>
           <a
-            class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+            class="header-link font-medium hover:text-neutral-900 dark:hover:text-white mx-3 px-1 mt-3 mb-2 pb-1 flex items-center transition duration-150 ease-in-out"
             href="/speakers">Speakers</a
           >
         </li>
 
         <li>
           <a
-            class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-            href="https://bioinformaticsopendays.com/#travelguide">Travel Guide</a
+            class="header-link font-medium hover:text-neutral-900 dark:hover:text-white mx-3 px-1 mt-3 mb-2 pb-1 flex items-center transition duration-150 ease-in-out"
+            href="/#travelguide">Travel Guide</a
           >
         </li>
 
@@ -90,8 +90,8 @@ import { getHomePermalink } from '~/utils/permalinks';
 
         <li>
           <a
-            class="font-medium hover:text-neutral-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-            href="https://bioinformaticsopendays.com/#registration"
+            class="header-link font-medium hover:text-neutral-900 dark:hover:text-white mx-3 px-1 mt-3 mb-2 pb-1 flex items-center transition duration-150 ease-in-out"
+            href="/#registration"
             >Registration
           </a>
         </li>
@@ -115,3 +115,32 @@ import { getHomePermalink } from '~/utils/permalinks';
     </div>
   </div>
 </header>
+
+<style>
+  @media (min-width: 768px) {
+    .header-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.2s ease;
+    }
+
+    .header-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0.3rem;
+      width: 100%;
+      height: 2px;
+      background: #facc15;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .header-link:hover::after,
+    .header-link:focus-visible::after {
+      transform: scaleX(1);
+    }
+  }
+</style>
