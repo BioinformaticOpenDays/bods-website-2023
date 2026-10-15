@@ -8,7 +8,7 @@ import { getHomePermalink } from '~/utils/permalinks';
 ---
 
 <header
-  class="sticky top-0 z-40 flex-none w-full transition-transform duration-300 bg-white md:bg-white/90 dark:bg-neutral-900 dark:md:bg-neutral-900 md:backdrop-blur-sm border-b dark:border-b-0 overflow-y-auto md:overflow-visible"
+  class="sticky top-0 z-40 flex-none w-full transition-transform duration-300 bg-white md:bg-white/90 dark:bg-neutral-900 dark:md:bg-neutral-900 md:backdrop-blur-sm border-b dark:border-b-0 shadow-[0_20px_40px_-2px_rgba(255,255,255,0.25)] overflow-y-auto md:overflow-visible"
   id="header"
 >
   <div class="py-3 px-3 md:flex justify-between">
@@ -115,3 +115,27 @@ import { getHomePermalink } from '~/utils/permalinks';
     </div>
   </div>
 </header>
+
+<style>
+  .header-link {
+    position: relative;
+  }
+
+  .header-link::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: rgb(187, 172, 0);
+    content: '';
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease;
+  }
+
+  .header-link:hover::after,
+  .header-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+</style>
