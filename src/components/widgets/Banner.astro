@@ -1,11 +1,10 @@
 ---
-import BearLink from 'src/components/widgets/BearLink.astro';
 import banner from '~/assets/images/banner_2027.png';
 ---
 
-<div class="banner">
+<div class="banner md:mt-5">
   <img
-    class="cover"
+    class="cover rounded-xl mx-5"
     src={banner.src}
     alt="Bioinformatics Open Days"
   />
@@ -13,7 +12,7 @@ import banner from '~/assets/images/banner_2027.png';
     <h1 class="dark:text-white text-4xl md:text-[3.50rem] tracking-tighter mb-4 font-bold leading-tighter font-heading">
       Bioinformatics Open Days
     </h1>
-    <div>
+    <div class="mt-3">
       <h2 class="text-3xl">
         <strong>XVI</strong> Edition
       </h2>
@@ -24,7 +23,7 @@ import banner from '~/assets/images/banner_2027.png';
 				<BearLink animation="scale" />-
 			</span-->
     </div>
-    <div>
+    <div class="mt-4 rounded-xl bg-yellow-400/70 dark:bg-yellow-600/70 p-3 px-5 text-white">
       <h4 class="text-xl text-center">
         University of Minho, CP2 - Auditorium B1 <br />Gualtar Campus, Braga, Portugal
       </h4>

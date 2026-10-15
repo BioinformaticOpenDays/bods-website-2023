@@ -40,6 +40,34 @@
 		return document.querySelector('[data-aw-toggle-menu]')?.classList.contains('expanded') ?? false;
 	}
 
+	const THRESHOLD = 100;
+	let lastY = window.scrollY;
+	let ticking = false;
+
+	function update() {
+		const header = document.getElementById("header");
+		if (!header) return;
+
+		const y = window.scrollY;
+		const menuOpen = header.classList.contains("h-screen"); // mobile menu open
+		const hide = y > THRESHOLD && y > lastY && !menuOpen;
+
+		header.style.transform = hide ? "translateY(-100%)" : "";
+		lastY = y;
+		ticking = false;
+	}
+
+	window.addEventListener(
+		"scroll",
+		() => {
+		if (!ticking) {
+			ticking = true;
+			requestAnimationFrame(update);
+		}
+		},
+		{ passive: true }
+	);
+
 	window.addEventListener('load', function () {
 		attachEvent('[data-aw-toggle-menu]', 'click', function () {
 			setMenuOpen(!isMenuOpen());
