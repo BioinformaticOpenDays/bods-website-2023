@@ -16,6 +16,7 @@ import Registration from '~/components/widgets/Registration.astro';
 import Banner from '~/components/widgets/Banner.astro';
 // import Submissions from '~/components/widgets/Submissions.astro';
 import ScheduleMini from '~/components/widgets/ScheduleMini.astro';
+import EventMarquee from '~/components/widgets/EventMarquee.astro';
 
 const meta = {
 	title: SITE.title,
@@ -27,13 +28,11 @@ const meta = {
 <Layout {meta}>
 	<Banner />
 	<About />
-<!-- <Hero /> -->
 	<Travelguide />
 	<Steps />
-	<!-- <Features2 /> -->
 	<ScheduleMini />
+	<EventMarquee />
 	<!-- <Submissions /> -->
-	<!-- <Liga /> -->
 	<Registration /> 
 	<!-- <CallToAction /> /-->
 </Layout>

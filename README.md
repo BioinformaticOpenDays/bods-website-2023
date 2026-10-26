@@ -1,6 +1,6 @@
-# 💻 Bioinformatics Open Days 2023 Website
+# 💻 Bioinformatics Open Days 2027 Website
 
-This is the new **Bioinformatics Open Days 2023** website built with [Astro](https://astro.build/) and edited in [CodeSandbox](https://codesandbox.io/?from-app=1).
+This is the new **Bioinformatics Open Days 2027** website built with [Astro](https://astro.build/), edited in [CodeSandbox](https://codesandbox.io/?from-app=1), and deployed with [Netlify](https://app.netlify.com/).
 
 **AstroWind** is a free and open-source template to make your website using **Astro + Tailwind CSS**.
 
@@ -12,7 +12,7 @@ Bioinformatics Open Days is a student-led initiative, first held at the Universi
 
 Aimed to promote knowledge exchange between students, teachers and researchers from the Bioinformatics and Computational Biology fields. Bioinformatics Students National Meeting.
 
-### 🗓 Save the date: **16-18 March 2023**!
+### 🗓 Save the date: **21-23 April 2027**!
 
 ## Contributing
 
