@@ -533,6 +533,39 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@iconify-json/emojione-v1@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@iconify-json/emojione-v1/-/emojione-v1-1.2.3.tgz#ad446e00104571acc7c1ad125e2dff5e729c34f8"
+  integrity sha512-UjI2VQEXVtGlPBvQuxEizro7QCgBcJDOYwKUupquvvZ8UV4xOlvm45IU82JYWegiAWLerY79gFLMZ26U6Ms+ww==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify-json/icon-park@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@iconify-json/icon-park/-/icon-park-1.2.4.tgz#7315baf8d1718f2b5ac327f74dcffac1cbc394ef"
+  integrity sha512-S8fVl49LG/M9hvwb7ruFGInK21AHMv3IJehOJRJgXPLE39OOCP3wbfTWjro/XzsjxRwdvX/lYdGetFOZI0TaJQ==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify-json/logos@^1.2.20":
+  version "1.2.20"
+  resolved "https://registry.yarnpkg.com/@iconify-json/logos/-/logos-1.2.20.tgz#8ead0929d1716706f637ad60f6402abae8a37a51"
+  integrity sha512-HDSte2/+sgGNn9i/eYMiIRDbdigWxZe6EFauQGtxfRG/4sUtUBFgLIdxotKQysKNsFJlLYDFzPILOs3mh9viRQ==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify-json/tabler@^1.2.46":
+  version "1.2.46"
+  resolved "https://registry.yarnpkg.com/@iconify-json/tabler/-/tabler-1.2.46.tgz#4a7317ef9cf4db02d4d9b093ea525b10624a86d8"
+  integrity sha512-iyEZEUhHV4x1ZbNzzjk3i6Z+MH5h5nXipqKaH7+bUlnoQwzn7fNjWRSqwWtwQ4PYN6WM+N/fLQC/48TRto26qQ==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify/types@*":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"
+  integrity sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==
+
 "@jridgewell/gen-mapping@^0.1.0":
   version "0.1.1"
   resolved "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.1.1.tgz"
